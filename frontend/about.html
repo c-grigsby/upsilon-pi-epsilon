@@ -11,7 +11,9 @@
     <meta
       name="keywords"
       content="upe,upsilon pi epsilon,coastal carolina univeristy,South Carolina,honor society"
-    />
+    />    <!-- lazy-loading-library: Lozad.js https://github.com/ApoorvSaxena/lozad.js -->
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
+
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -37,9 +39,7 @@
     <section id="about-info" class="bg-light py-3">
       <div class="container">
         <div class="info-left">
-          <h1 class="l-heading">
-            <span class="text-primary">About</span> Upsilon Pi Epsilon
-          </h1>
+          <h1 class="l-heading"><span class="text-primary">About</span> UPE</h1>
           <p>
             The computing and information disciplines are relatively young. Yet
             despite their comparative youth, these disciplines have had an
@@ -55,7 +55,7 @@
           </p>
         </div>
         <div class="info-right">
-          <img src="./img/about-photo.jpg" alt="hotel" />
+          <img src="./img/about-photo.jpg" alt="about upe" />
         </div>
       </div>
     </section>
@@ -66,7 +66,11 @@
       <div class="container">
         <h2 class="l-heading">Meet Our Officers</h2>
         <div class="officer bg-primary">
-          <img src="./img/officer-leslie-horace.jpeg" alt="Leslie" />
+          <img
+            data-src="./img/officer-leslie-horace.jpeg"
+            class="lozad"
+            alt="Leslie"
+          />
           <p>
             <span class="officer-position">President</span>
             <span class="officer-name">Leslie Horace</span>
@@ -80,7 +84,11 @@
         </div>
 
         <div class="officer bg-primary">
-          <img src="./img/officer-ellie-hanford.jpeg" alt="Ellie" />
+          <img
+            data-src="./img/officer-ellie-hanford.jpeg"
+            class="lozad"
+            alt="Ellie"
+          />
           <p>
             <span class="officer-position">Vice President</span>
             <span class="officer-name">Ellie Hanford</span>
@@ -94,7 +102,11 @@
         </div>
 
         <div class="officer bg-primary">
-          <img src="./img/officer-chris-jokes.jpg" alt="Chris" />
+          <img
+            data-src="./img/officer-chris-jokes.jpg"
+            class="lozad"
+            alt="Chris"
+          />
           <p>
             <span class="officer-position">Secretary</span>
             <span class="officer-name">Christopher Grigsby</span>
@@ -102,7 +114,8 @@
             Senior undergraduate student at Coastal Carolina University pursuing
             a Bachelor of Science in Computer Science. Former software engineer
             at Celerik engaged in client and server-side software development.
-            Enjoys hiking, kayaking, music, barbeque, and contributing to open-source software.
+            Enjoys hiking, kayaking, music, barbeque, and contributing to
+            open-source software.
           </p>
         </div>
       </div>
@@ -133,7 +146,8 @@
     </section>
 
     <footer id="main-footer">
-      <p>UPE &copy; 2022, All Rights Reserved</p>
+      <p>CCU UPE &copy; 2022, MIT</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

@@ -177,9 +177,9 @@ p {
 #home-info .info-img {
   float: left;
   width: 50%;
-  background: url('../img/atheneum-hall.jpg') no-repeat;
   min-height: 100%;
   object-fit: cover;
+  background-repeat: no-repeat;
 }
 
 #home-info .info-content {
@@ -316,4 +316,17 @@ p {
   background: #444;
   color: #fff;
   padding: 20px;
+}
+
+/* Lazy Images */
+.lazy-img {
+  filter: blur(20px);
+}
+
+@namespace url(http://www.w3.org/1999/xhtml);
+@-moz-document url-prefix("http") {
+  * {
+    font-family: 'Segoe UI' !important;
+    font-weight: 300 !important;
+  }
 }
