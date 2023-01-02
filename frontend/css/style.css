@@ -224,7 +224,7 @@ p {
   float: right;
   width: 50%;
   min-height: 100%;
-  margin-top: 56px;
+  margin-top: 49px;
 }
 
 #about-info .info-right img {
@@ -282,6 +282,10 @@ p {
   margin-top: 45px;
   width: 100%;
   min-height: 100%;
+}
+
+p a {
+  font-weight: 700;
 }
 
 /* Contact Form */
