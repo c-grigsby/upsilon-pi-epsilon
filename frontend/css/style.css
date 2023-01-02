@@ -327,7 +327,7 @@ p {
 
 /* Events */
 #events {
-  min-height: 80vh;
+  min-height: 78vh;
   align-items: center;
   background-position: center;
   background-size: cover;
@@ -354,11 +354,6 @@ p {
   margin-top: 15px;
   border-radius: 50%;
   object-fit: cover;
-}
-
-#event-img {
-  margin-top: 10px !important;
-  width: 50% !important;
 }
 
 @namespace url(http://www.w3.org/1999/xhtml);
