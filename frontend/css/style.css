@@ -225,7 +225,10 @@ p {
   float: right;
   width: 50%;
   min-height: 100%;
-  margin-top: 49px;
+}
+
+.info_right_container {
+  margin-top: 5vh;
 }
 
 #about-info .info-right img {
