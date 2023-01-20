@@ -25,6 +25,14 @@ const showSuccess = (input) => {
   formControl.className = 'form-group success';
 };
 
+// Remove success class
+const removeSuccess = (inputArr) => {
+  inputArr.forEach((input) => {
+    const formControl = input.parentElement;
+    formControl.className = 'form-group';
+  });
+};
+
 // Check input length
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
@@ -102,6 +110,22 @@ function outsideClick(e) {
   }
 }
 
+const sendContactForm = () => {
+  const payload = new FormData(form);
+  console.log(payload);
+  fetch('http://localhost:8000/api/v1/mailer/sendEmail', {
+    method: 'POST',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: payload,
+  })
+    .then((res) => res.json())
+    .then((data) => console.log(data))
+    .catch((err) => console.log(err));
+};
+
 formSubmitBttn.addEventListener('click', function (e) {
   e.preventDefault();
   if (
@@ -111,6 +135,9 @@ formSubmitBttn.addEventListener('click', function (e) {
   ) {
     openModal();
     form.reset();
+    removeSuccess([username, email, message]);
+
+    sendContactForm();
   }
 });
 
