@@ -1,8 +1,11 @@
 ('use strict');
 const form = document.getElementById('form');
+const formSubmitBttn = document.getElementById('submit-bttn');
 const email = document.getElementById('email');
 const username = document.getElementById('name');
 const message = document.getElementById('message');
+const modal = document.getElementById('modal');
+const closeBtn = document.querySelector('.close');
 
 // @Lozad lazy loading
 const observer = lozad();
@@ -23,36 +26,49 @@ const showSuccess = (input) => {
 };
 
 // Check input length
-function checkLength(input, min, max) {
+const checkLength = (input, min, max) => {
   if (input.value.length < min) {
     showError(
       input,
       `${getFieldName(input)} must be at least ${min} characters`
     );
+    return false;
   } else if (input.value.length > max) {
     showError(
       input,
       `${getFieldName(input)} must be less than ${max} characters`
     );
+    return false;
   } else {
     showSuccess(input);
+    return true;
   }
-}
+};
+
+// Helper function to checkRequired
+const getFieldName = (input) => {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+};
 
 // Check for void required fields
-function checkRequired(inputArr) {
-  inputArr.forEach(function (input) {
+const checkRequired = (inputArr) => {
+  let notEmptyInput = 0;
+
+  inputArr.forEach((input) => {
     if (input.value.trim() === '') {
       showError(input, `${getFieldName(input)} is required`);
     } else {
       showSuccess(input);
+      notEmptyInput++;
     }
   });
-}
-// Helper function to checkRequired
-function getFieldName(input) {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
-}
+
+  if (notEmptyInput === inputArr.length) {
+    return true;
+  } else {
+    return false;
+  }
+};
 
 // Check email is valid
 const checkEmail = (email) => {
@@ -60,16 +76,43 @@ const checkEmail = (email) => {
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (re.test(String(email.value).toLowerCase())) {
     showSuccess(email);
+    return true;
   } else {
     const formControl = email.parentElement;
     formControl.classList.remove('success');
     showError(email, 'Email is not valid');
+    return false;
   }
 };
 
-form.addEventListener('submit', function (e) {
+// Open modal
+const openModal = () => {
+  modal.style.display = 'block';
+};
+
+// Close modal
+const closeModal = () => {
+  modal.style.display = 'none';
+};
+
+// Close if outside click
+function outsideClick(e) {
+  if (e.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+formSubmitBttn.addEventListener('click', function (e) {
   e.preventDefault();
-  checkRequired([username, email, message]);
-  checkLength(username, 3, 30);
-  checkEmail(email);
+  if (
+    checkRequired([username, email, message]) &&
+    checkEmail(email) &&
+    checkLength(username, 3, 30)
+  ) {
+    openModal();
+    form.reset();
+  }
 });
+
+closeBtn.addEventListener('click', closeModal);
+window.addEventListener('click', outsideClick);

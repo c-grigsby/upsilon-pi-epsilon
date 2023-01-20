@@ -63,10 +63,33 @@
             <textarea name="message" id="message"></textarea>
             <small>Error Message</small>
           </div>
-          <button type="submit" class="btn">Submit</button>
+          <button type="button" value="Submit" id="submit-bttn" class="btn">
+            Submit&nbsp;<i class="fa fa-envelope"></i>
+          </button>
         </form>
       </div>
     </section>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>
+            Thank You&nbsp;<i
+              class="fa fa-envelope"
+              style="font-size: 24px"
+            ></i>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <p id="modal-text">
+            Your message has been sent to the South Carolina Gamma Chapter of
+            UPE at Coastal Carolina University
+          </p>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
 
     <section id="contact-info" class="bg-dark">
       <div class="container">
