@@ -2,6 +2,7 @@
 const cors = require('cors');
 const dotenv = require('dotenv');
 const express = require('express');
+const { readdirSync } = require('fs');
 // @scripts
 dotenv.config({ path: './config/config.env' });
 
@@ -12,6 +13,11 @@ app.use(express.json());
 // middleware_cors
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
+
+// mount_routers
+readdirSync('./routes').map((route) =>
+  app.use('/', require(`./routes/${route}`))
+);
 
 // home
 app.get('/', (_req, res) => {
