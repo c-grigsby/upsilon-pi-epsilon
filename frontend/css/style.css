@@ -226,6 +226,13 @@ p {
   margin-bottom: 10px;
 }
 
+#discord-link {
+  position: relative;
+  bottom: -8px;
+  left: 2px;
+  font-size: 32px;
+}
+
 /* About Info */
 #about-info .info-right {
   float: right;
@@ -388,7 +395,7 @@ p a {
 }
 
 .modal-footer {
-  background: #fff; 
+  background: #fff;
   padding: 10px;
   color: #333;
   text-align: center;
