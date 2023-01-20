@@ -110,15 +110,12 @@ function outsideClick(e) {
   }
 }
 
+// POSTs contact form data to the API
 const sendContactForm = () => {
-  const payload = new FormData(form);
-  console.log(payload);
-  fetch('http://localhost:8000/api/v1/mailer/sendEmail', {
+  const pre_payload = new FormData(form);
+  const payload = new URLSearchParams(pre_payload);
+  fetch('https://upe-server.herokuapp.com/api/v1/mailer/sendEmail', {
     method: 'POST',
-    headers: {
-      Accept: 'application/json',
-      'Content-Type': 'application/json',
-    },
     body: payload,
   })
     .then((res) => res.json())
@@ -126,6 +123,7 @@ const sendContactForm = () => {
     .catch((err) => console.log(err));
 };
 
+// Event Listeners
 formSubmitBttn.addEventListener('click', function (e) {
   e.preventDefault();
   if (
@@ -134,12 +132,10 @@ formSubmitBttn.addEventListener('click', function (e) {
     checkLength(username, 3, 30)
   ) {
     openModal();
-    form.reset();
-    removeSuccess([username, email, message]);
-
     sendContactForm();
+    removeSuccess([username, email, message]);
+    form.reset();
   }
 });
-
 closeBtn.addEventListener('click', closeModal);
 window.addEventListener('click', outsideClick);
