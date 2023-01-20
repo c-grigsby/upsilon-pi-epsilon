@@ -226,11 +226,28 @@ p {
   margin-bottom: 10px;
 }
 
+/* Icons */
+#discord-invite-link {
+  position: relative;
+  bottom: -6px;
+  left: 2px;
+  font-size: 28px;
+  color: #444;
+}
+
 #discord-link {
   position: relative;
-  bottom: -8px;
+  bottom: 1px;
+  font-size: 34px;
+  color: #444;
+}
+
+#github-icon {
+  position: relative;
+  top: 3px;
   left: 2px;
-  font-size: 32px;
+  font-size: 26px;
+  color: #444;
 }
 
 /* About Info */
