@@ -1,3 +1,8 @@
+:root {
+  --success-color: #f7c08a;
+  --error-color: #e74c3c;
+}
+
 /* Reset */
 * {
   margin: 0;
@@ -317,6 +322,27 @@ p a {
 #contact-form textarea:focus {
   outline: none;
   border-color: #f7c08a;
+}
+
+.form-group.success input {
+  border-color: var(--success-color) !important;
+}
+
+.form-group.error input {
+  border-color: var(--error-color) !important;
+}
+
+.form-group.error textarea {
+  border-color: var(--error-color) !important;
+}
+
+.form-group small {
+  color: var(--error-color);
+  visibility: hidden;
+}
+
+.form-group.error small {
+  visibility: visible;
 }
 
 /* Footer */
