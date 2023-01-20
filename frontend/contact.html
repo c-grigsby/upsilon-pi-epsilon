@@ -18,6 +18,8 @@
       integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP"
       crossorigin="anonymous"
     />
+    <!-- lazy-loading-library: Lozad.js https://github.com/ApoorvSaxena/lozad.js -->
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
     <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
@@ -45,30 +47,56 @@
       <div class="container">
         <h1 class="l-heading"><span class="text-primary">Contact</span> Us</h1>
         <p>Please fill out the form below to contact us</p>
-        <form action="process.php">
+        <form id="form" action="process.php">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" name="name" id="name" />
+            <small>Error Message</small>
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input type="email" name="email" id="email" />
+            <small>Error Message</small>
           </div>
           <div class="form-group">
             <label for="message">Message</label>
             <textarea name="message" id="message"></textarea>
+            <small>Error Message</small>
           </div>
-          <button type="submit" class="btn">Submit</button>
+          <button type="button" value="Submit" id="submit-bttn" class="btn">
+            Submit
+          </button>
         </form>
       </div>
     </section>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <span class="close">&times;</span>
+          <h2>
+            Thank You&nbsp;<i
+              class="fa fa-envelope"
+              style="font-size: 24px"
+            ></i>
+          </h2>
+        </div>
+        <div class="modal-body">
+          <p id="modal-text">
+            Your message has been sent to the South Carolina Gamma Chapter of
+            UPE at Coastal Carolina University
+          </p>
+        </div>
+        <div class="modal-footer"></div>
+      </div>
+    </div>
 
     <section id="contact-info" class="bg-dark">
       <div class="container">
         <div class="box">
           <i class="fas fa-hotel fa-3x"></i>
           <h3>Location</h3>
-          <p>AOC2 Chanticleer Dr East<br />Conway, South Carolina 29528</p>
+          <p>AOC2 Chanticleer Dr East<br />Conway, SC 29528</p>
         </div>
         <div class="box">
           <i class="fas fa-phone fa-3x"></i>
@@ -86,5 +114,6 @@
     <footer id="main-footer">
       <p>CCU UPE &copy; 2023, MIT</p>
     </footer>
+    <script src="script.js"></script>
   </body>
 </html>

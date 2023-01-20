@@ -13,4 +13,5 @@ A website for the South Carolina Gamma Chapter of UPE at Coastal Carolina Univer
 ---
 ## Project Details
 - Website to host about, contact, and events information 
+- Developed with VanillaJS & Express server
 - Deployed to domain via Netlify: www.upeccu.com
