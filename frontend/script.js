@@ -114,7 +114,7 @@ function outsideClick(e) {
 const sendContactForm = () => {
   const pre_payload = new FormData(form);
   const payload = new URLSearchParams(pre_payload);
-  fetch('http://localhost:8000/api/v1/mailer/sendEmail', {
+  fetch('https://upe-server.herokuapp.com/api/v1/mailer/sendEmail', {
     method: 'POST',
     body: payload,
   })
