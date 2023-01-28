@@ -39,7 +39,7 @@ exports.sendContactEmail = (name, email, message) => {
   const mailOptions = {
     from: EMAIL,
     to: UPE_EMAIL_ADDRESS,
-    subject: 'UPE Contact Data',
+    subject: 'UPE Contact Request',
     html: `<div style="max-width:700px;margin-bottom:1rem;display:flex;align-items:center;gap:10px;font-family:Roboto;font-weight:600;color:#151922"><span>Attention: UPE Contact Request</span></div><div style="padding:1rem 0;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;color:#141823;font-size:17px;font-family:Roboto"><span>New Message from: ${name}</span><div style="padding:10px 0"><span style="padding:1.5rem 0">Email: ${email}</span></div><br><div style="padding-top:5px"><span style="margin:1.5rem 0;color:#000">"${message}"<br><br>~ ${name}</span></div></div>`,
   };
   stmp.sendMail(mailOptions, (err, res) => {
