@@ -486,6 +486,14 @@ p a {
   object-fit: cover;
 }
 
+.rsvp-link {
+  color: #fff;
+}
+
+.rsvp-link:hover {
+  text-decoration: underline !important;
+}
+
 @namespace url(http://www.w3.org/1999/xhtml);
 @-moz-document url-prefix("http") {
   * {
