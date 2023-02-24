@@ -370,6 +370,18 @@ p a {
   visibility: visible;
 }
 
+.form-group .textarea-show {
+  margin-top: -5px;
+  font-size: small;
+  color: #333;
+  visibility: visible !important;
+}
+
+.textarea-show #discord-invite-link {
+  font-size: 23.5px;
+  cursor: default;
+}
+
 .modal {
   display: none;
   position: fixed;
