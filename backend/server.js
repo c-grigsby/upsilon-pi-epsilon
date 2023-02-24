@@ -8,9 +8,9 @@ dotenv.config({ path: './config/config.env' });
 
 const app = express();
 
-// middleware_body_parser
+// @middleware body_parser
 app.use(express.json());
-// middleware_cors
+// @middleware cors
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 
