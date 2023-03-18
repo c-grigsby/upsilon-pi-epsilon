@@ -80,9 +80,9 @@ const checkRequired = (inputArr) => {
 
 // Check email is valid
 const checkEmail = (email) => {
-  const re =
+  const regex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-  if (re.test(String(email.value).toLowerCase())) {
+  if (regex.test(String(email.value).toLowerCase())) {
     showSuccess(email);
     return true;
   } else {
