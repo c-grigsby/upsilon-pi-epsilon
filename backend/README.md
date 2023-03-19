@@ -11,6 +11,8 @@ This server-side application is the backend for the Upsilon Pi Epsilon (UPE) web
 
 ## Installation
 
+To install dependencies, navigate in the terminal to the 'backend' directory and execute
+
 ```
 $ npm install
 ```
@@ -26,9 +28,10 @@ $ npm run dev
 # production mode
 $ npm run start
 ```
+
 ## Configuring
 
- This application utilizes dotenv to host environment variables. Add a file named config.env to the 'config' directory, then include the contents of the config.env.example found within this folder
+This application utilizes [dotenv](https://www.npmjs.com/package/dotenv) to host environment variables. Add a file named config.env to the 'config' directory, then include the contents of the config.env.example found within this folder
 
 ## Deploying to Heroku
 
