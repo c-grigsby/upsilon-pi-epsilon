@@ -46,7 +46,7 @@ exports.sendContactEmail = (name, email, message) => {
   };
   
   smtp.sendMail(mailOptions, (err, res) => {
-    if (err) return err;
+    if (err) { return err; }
     return res;
   });
 };
