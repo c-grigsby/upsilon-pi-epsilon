@@ -33,6 +33,11 @@ const removeSuccess = (inputArr) => {
   });
 };
 
+// Helper function to checkLength & checkRequired
+const getFieldName = (input) => {
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+};
+
 // Check input length
 const checkLength = (input, min, max) => {
   if (input.value.length < min) {
@@ -51,11 +56,6 @@ const checkLength = (input, min, max) => {
     showSuccess(input);
     return true;
   }
-};
-
-// Helper function to checkRequired
-const getFieldName = (input) => {
-  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 };
 
 // Check for void required fields
@@ -79,7 +79,7 @@ const checkRequired = (inputArr) => {
 };
 
 // Check email is valid
-const checkEmail = (email) => {
+const checkValidEmail = (email) => {
   const regex =
     /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   if (regex.test(String(email.value).toLowerCase())) {
@@ -128,7 +128,7 @@ formSubmitBttn.addEventListener('click', function (e) {
   e.preventDefault();
   if (
     checkRequired([username, email, message]) &&
-    checkEmail(email) &&
+    checkValidEmail(email) &&
     checkLength(username, 3, 30)
   ) {
     openModal();
